@@ -137,11 +137,13 @@ def select_repositories(repos: list[dict], events: list[dict], login: str, limit
 def collect(api: GitHub, config: dict, now: datetime | None = None) -> dict:
     now = now or datetime.now(timezone.utc)
     login = config["username"]
-    viewer = api.request("user")
-    actor = viewer.get("login", "").lower()
-    actions_for_owner = (os.getenv("GITHUB_ACTIONS") == "true" and actor == "github-actions[bot]" and os.getenv("GITHUB_REPOSITORY", "").lower() == (login + "/" + login).lower())
-    if actor != login.lower() and not actions_for_owner:
-        raise APIError(f"Authenticated user {viewer.get('login')} differs from configured user {login}")
+    if os.getenv("GITHUB_ACTIONS") == "true":
+        if os.getenv("GITHUB_REPOSITORY", "").lower() != (login + "/" + login).lower():
+            raise APIError("Workflow repository differs from configured profile owner")
+    else:
+        viewer = api.request("user")
+        if viewer.get("login", "").lower() != login.lower():
+            raise APIError(f"Authenticated user {viewer.get('login')} differs from configured user {login}")
     user = api.request("users/" + login)
     repos = api.pages("users/" + login + "/repos?type=public&sort=updated", 2)
     repos = [r for r in repos if not r.get("private")]
