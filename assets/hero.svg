@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 280" width="960" height="280" role="img" aria-label="Satvik Patel, computer science student interested in cybersecurity and AI/ML">
+<title>Satvik Patel, computer science student interested in cybersecurity and AI/ML</title>
+<rect width="960" height="280" rx="22" fill="#0b1020"/>
+<rect x="1" y="1" width="958" height="278" rx="21" fill="none" stroke="#25405a"/>
+<defs><linearGradient id="glow"><stop stop-color="#36d8ee"/><stop offset="1" stop-color="#a99aff"/></linearGradient></defs>
+<path d="M640 0v70h72v45h125v80h123M750 0v46h100v76h110M625 280v-56h75v-64h114" fill="none" stroke="#1c4b66" stroke-width="1.5"/>
+<circle cx="712" cy="115" r="4" fill="#36d8ee"/><circle cx="850" cy="46" r="4" fill="#a99aff"/>
+<rect x="44" y="39" width="164" height="27" rx="13" fill="#15334a"/>
+<text x="57" y="58" fill="#36d8ee" font-family="Segoe UI,Arial,sans-serif" font-size="12" font-weight="700">CYBER // MIDNIGHT</text>
+<text x="44" y="120" fill="#eaf5fa" font-family="Segoe UI,Arial,sans-serif" font-size="52" font-weight="700">Satvik Patel</text>
+<text x="46" y="158" fill="#36d8ee" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="600">COMPUTER SCIENCE STUDENT</text>
+<text x="46" y="190" fill="#eaf5fa" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="500">Cybersecurity &amp; AI/ML Enthusiast</text>
+<text x="46" y="225" fill="#9eb2c3" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="400">Building secure, intelligent, and useful systems</text>
+<rect x="44" y="247" width="872" height="2" fill="url(#glow)"/>
+<circle cx="888" cy="51" r="5" fill="#62d7a2"/>
+</svg>

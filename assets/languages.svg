@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 240" width="960" height="240" role="img" aria-label="Languages across public owned repositories and recently changed files">
+<title>Languages across public owned repositories and recently changed files</title>
+<rect width="960" height="240" rx="22" fill="#0b1020"/>
+<rect x="1" y="1" width="958" height="238" rx="21" fill="none" stroke="#25405a"/>
+<text x="36" y="45" fill="#36d8ee" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="700">LANGUAGE SIGNAL</text>
+<text x="36" y="75" fill="#9eb2c3" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="400">Primary language of public owned repositories</text>
+<text x="36" y="110" fill="#eaf5fa" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="400">TypeScript</text>
+<rect x="190" y="100" width="120" height="12" rx="6" fill="#36d8ee"/>
+<text x="475" y="111" fill="#9eb2c3" font-family="Segoe UI,Arial,sans-serif" font-size="12" font-weight="400">3</text>
+<text x="36" y="135" fill="#eaf5fa" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="400">Python</text>
+<rect x="190" y="125" width="120" height="12" rx="6" fill="#36d8ee"/>
+<text x="475" y="136" fill="#9eb2c3" font-family="Segoe UI,Arial,sans-serif" font-size="12" font-weight="400">3</text>
+<text x="36" y="160" fill="#eaf5fa" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="400">JavaScript</text>
+<rect x="190" y="150" width="80" height="12" rx="6" fill="#36d8ee"/>
+<text x="475" y="161" fill="#9eb2c3" font-family="Segoe UI,Arial,sans-serif" font-size="12" font-weight="400">2</text>
+<text x="36" y="185" fill="#eaf5fa" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="400">Java</text>
+<rect x="190" y="175" width="40" height="12" rx="6" fill="#36d8ee"/>
+<text x="475" y="186" fill="#9eb2c3" font-family="Segoe UI,Arial,sans-serif" font-size="12" font-weight="400">1</text>
+<text x="36" y="210" fill="#eaf5fa" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="400">Jupyter Notebook</text>
+<rect x="190" y="200" width="40" height="12" rx="6" fill="#36d8ee"/>
+<text x="475" y="211" fill="#9eb2c3" font-family="Segoe UI,Arial,sans-serif" font-size="12" font-weight="400">1</text>
+<text x="550" y="75" fill="#9eb2c3" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="400">Source files touched in analyzed commits (30d)</text>
+<text x="550" y="110" fill="#eaf5fa" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="400">TypeScript</text>
+<rect x="730" y="100" width="140" height="12" rx="6" fill="#a99aff"/>
+<text x="884" y="111" fill="#9eb2c3" font-family="Segoe UI,Arial,sans-serif" font-size="12" font-weight="400">36</text>
+<text x="550" y="135" fill="#eaf5fa" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="400">JavaScript</text>
+<rect x="730" y="125" width="140" height="12" rx="6" fill="#a99aff"/>
+<text x="884" y="136" fill="#9eb2c3" font-family="Segoe UI,Arial,sans-serif" font-size="12" font-weight="400">26</text>
+<text x="550" y="160" fill="#eaf5fa" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="400">Python</text>
+<rect x="730" y="150" width="140" height="12" rx="6" fill="#a99aff"/>
+<text x="884" y="161" fill="#9eb2c3" font-family="Segoe UI,Arial,sans-serif" font-size="12" font-weight="400">14</text>
+<text x="550" y="185" fill="#eaf5fa" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="400">Java</text>
+<rect x="730" y="175" width="140" height="12" rx="6" fill="#a99aff"/>
+<text x="884" y="186" fill="#9eb2c3" font-family="Segoe UI,Arial,sans-serif" font-size="12" font-weight="400">13</text>
+<text x="550" y="210" fill="#eaf5fa" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="400">SQL</text>
+<rect x="730" y="200" width="33" height="12" rx="6" fill="#a99aff"/>
+<text x="884" y="211" fill="#9eb2c3" font-family="Segoe UI,Arial,sans-serif" font-size="12" font-weight="400">3</text>
+</svg>

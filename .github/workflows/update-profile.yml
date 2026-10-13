@@ -1,0 +1,56 @@
+name: Update profile
+
+on:
+  schedule:
+    # Edit this cron to change frequency. Scheduled runs may be delayed.
+    - cron: '17 */6 * * *'
+  workflow_dispatch:
+  repository_dispatch:
+    types: [refresh-profile]
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/**'
+      - 'config/**'
+      - 'README.md'
+      - '.github/workflows/update-profile.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: profile-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    if: github.actor != 'github-actions[bot]' || github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || github.event_name == 'repository_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test generator
+        run: python -m unittest discover -s tests -v
+      - name: Generate profile
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python scripts/profile.py
+      - name: Validate generated assets
+        run: python scripts/validate.py
+      - name: Commit changed output
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git add README.md assets/*.svg
+          if git diff --cached --quiet; then
+            echo 'No generated changes'
+            exit 0
+          fi
+          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'chore(profile): refresh public metrics'
+          gh auth setup-git
+          git push origin HEAD:main
