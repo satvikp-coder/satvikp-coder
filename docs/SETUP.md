@@ -35,6 +35,30 @@ For a local refresh, set `GITHUB_TOKEN` or `GH_TOKEN` to an authenticated token,
 
 ## Optional faster cross-repository refresh
 
-The default schedule needs no setup in other repositories. For near-immediate updates after pushes elsewhere, use a GitHub App installed on the profile repository with only **Contents: read** and **Actions: write** permission, or a fine-grained token limited to the profile repository with Actions write permission. Store it as a secret in the source repository, and add a source workflow on push to the default branch that calls `POST /repos/satvikp-coder/satvikp-coder/dispatches` with `event_type: refresh-profile`. Do not use the source repository's default `GITHUB_TOKEN`: its scope cannot dispatch into this repository. Configure only repositories where faster refresh is valuable; the scheduled refresh remains the fallback. Revoke the credential to disable this optional path. No cross-repository trigger is installed by default.
+The default schedule needs no setup in other repositories. For near-immediate updates after pushes elsewhere, use a GitHub App installation token or fine-grained token limited to the profile repository with **Actions: write** permission. Store it as a secret named `PROFILE_REFRESH_TOKEN` in the source repository. Add this workflow there, changing the branch to its default branch:
 
-GitHub API references: [REST commits](https://docs.github.com/en/rest/commits/commits), [workflow schedule](https://docs.github.com/en/actions/reference/events-that-trigger-workflows#schedule), [GITHUB_TOKEN](https://docs.github.com/en/actions/security-for-github-actions/security-guides/automatic-token-authentication), [repository dispatch](https://docs.github.com/en/rest/repos/repos#create-a-repository-dispatch-event).
+```yaml
+name: Refresh profile after push
+on:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dispatch profile workflow
+        env:
+          PROFILE_REFRESH_TOKEN: ${{ secrets.PROFILE_REFRESH_TOKEN }}
+        run: |
+          curl --fail-with-body --silent --show-error -X POST \
+            -H "Authorization: Bearer $PROFILE_REFRESH_TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            https://api.github.com/repos/satvikp-coder/satvikp-coder/actions/workflows/update-profile.yml/dispatches \
+            -d '{"ref":"main"}'
+```
+
+The source repository's default `GITHUB_TOKEN` cannot access the profile repository. This method uses the workflow dispatch API, which requires Actions write on the target repository. The profile workflow also accepts `repository_dispatch` with event type `refresh-profile`; that alternative requires **Contents: write** on the target repository and is therefore less narrowly scoped for this purpose. Configure only repositories where faster refresh is valuable; the scheduled refresh remains the fallback. Revoke the credential to disable this optional path. No cross-repository trigger is installed by default.
+
+GitHub API references: [REST commits](https://docs.github.com/en/rest/commits/commits), [workflow schedule](https://docs.github.com/en/actions/reference/events-that-trigger-workflows#schedule), [GITHUB_TOKEN](https://docs.github.com/en/actions/security-for-github-actions/security-guides/automatic-token-authentication), [workflow dispatch](https://docs.github.com/en/rest/actions/workflows#create-a-workflow-dispatch-event), [repository dispatch](https://docs.github.com/en/rest/repos/repos#create-a-repository-dispatch-event).
