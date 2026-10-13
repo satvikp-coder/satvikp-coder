@@ -4,10 +4,10 @@
 <rect x="1" y="1" width="958" height="238" rx="21" fill="none" stroke="#25405a"/>
 <text x="36" y="45" fill="#36d8ee" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="700">LANGUAGE SIGNAL</text>
 <text x="36" y="75" fill="#9eb2c3" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="400">Primary language of public owned repositories</text>
-<text x="36" y="110" fill="#eaf5fa" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="400">TypeScript</text>
-<rect x="190" y="100" width="120" height="12" rx="6" fill="#36d8ee"/>
-<text x="475" y="111" fill="#9eb2c3" font-family="Segoe UI,Arial,sans-serif" font-size="12" font-weight="400">3</text>
-<text x="36" y="135" fill="#eaf5fa" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="400">Python</text>
+<text x="36" y="110" fill="#eaf5fa" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="400">Python</text>
+<rect x="190" y="100" width="160" height="12" rx="6" fill="#36d8ee"/>
+<text x="475" y="111" fill="#9eb2c3" font-family="Segoe UI,Arial,sans-serif" font-size="12" font-weight="400">4</text>
+<text x="36" y="135" fill="#eaf5fa" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="400">TypeScript</text>
 <rect x="190" y="125" width="120" height="12" rx="6" fill="#36d8ee"/>
 <text x="475" y="136" fill="#9eb2c3" font-family="Segoe UI,Arial,sans-serif" font-size="12" font-weight="400">3</text>
 <text x="36" y="160" fill="#eaf5fa" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="400">JavaScript</text>
