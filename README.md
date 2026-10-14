@@ -21,7 +21,7 @@ I’m a BS (Hons) Computer Science student at Ahmedabad University. I’m intere
 
 <p align="center"><img src="assets/activity.svg" alt="Development activity and thirty day contribution strip" width="960"></p>
 
-**Recently active public repositories:** [satvikp-coder/CSC360-AU2520039](https://github.com/satvikp-coder/CSC360-AU2520039), [varunkarthic/CSC360-Group2](https://github.com/varunkarthic/CSC360-Group2), [satvikp-coder/Ras](https://github.com/satvikp-coder/Ras), [satvikp-coder/demo-group7](https://github.com/satvikp-coder/demo-group7)
+**Recently active public repositories:** [satvikp-coder/CSC360-AU2520039](https://github.com/satvikp-coder/CSC360-AU2520039), [varunkarthic/CSC360-Group2](https://github.com/varunkarthic/CSC360-Group2), [satvikp-coder/pulse-xi](https://github.com/satvikp-coder/pulse-xi), [satvikp-coder/Ras](https://github.com/satvikp-coder/Ras)
 
 ### Selected work
 
