@@ -21,7 +21,7 @@ I’m a BS (Hons) Computer Science student at Ahmedabad University. I’m intere
 
 <p align="center"><img src="assets/activity.svg" alt="Development activity and thirty day contribution strip" width="960"></p>
 
-**Recently active public repositories:** [satvikp-coder/CSC360-AU2520039](https://github.com/satvikp-coder/CSC360-AU2520039), [varunkarthic/CSC360-Group2](https://github.com/varunkarthic/CSC360-Group2), [satvikp-coder/Ras](https://github.com/satvikp-coder/Ras), [satvikp-coder/demo-group7](https://github.com/satvikp-coder/demo-group7)
+**Recently active public repositories:** [Microsoft-Game-Developer-Hackathon-2026/Pulse-Xi](https://github.com/Microsoft-Game-Developer-Hackathon-2026/Pulse-Xi), [satvikp-coder/CSC360-AU2520039](https://github.com/satvikp-coder/CSC360-AU2520039), [varunkarthic/CSC360-Group2](https://github.com/varunkarthic/CSC360-Group2), [satvikp-coder/Ras](https://github.com/satvikp-coder/Ras)
 
 ### Selected work
 
@@ -39,11 +39,11 @@ I’m a BS (Hons) Computer Science student at Ahmedabad University. I’m intere
 
 ### Recent public activity
 
+- 2026-10-14 · Pushed code in [Microsoft-Game-Developer-Hackathon-2026/Pulse-Xi](https://github.com/Microsoft-Game-Developer-Hackathon-2026/Pulse-Xi)
 - 2026-10-12 · Pushed code in [satvikp-coder/demo-group7](https://github.com/satvikp-coder/demo-group7)
 - 2026-10-11 · Merged a pull request in [satvikp-coder/demo-group7](https://github.com/satvikp-coder/demo-group7)
 - 2026-10-10 · Opened a pull request in [satvikp-coder/demo-group7](https://github.com/satvikp-coder/demo-group7)
 - 2026-10-07 · Pushed code in [satvikp-coder/Ras](https://github.com/satvikp-coder/Ras)
-- 2026-10-01 · Pushed code in [varunkarthic/CSC360-Group2](https://github.com/varunkarthic/CSC360-Group2)
 
 <sub>Updated 2026-10-15 UTC · Public GitHub data · See [metric definitions](docs/SETUP.md#metric-definitions).</sub>
 <!-- PROFILE:GENERATED:END -->
