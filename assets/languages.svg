@@ -5,8 +5,8 @@
 <text x="36" y="45" fill="#36d8ee" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="700">LANGUAGE SIGNAL</text>
 <text x="36" y="75" fill="#9eb2c3" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="400">Primary language of public owned repositories</text>
 <text x="36" y="110" fill="#eaf5fa" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="400">Python</text>
-<rect x="190" y="100" width="200" height="12" rx="6" fill="#36d8ee"/>
-<text x="475" y="111" fill="#9eb2c3" font-family="Segoe UI,Arial,sans-serif" font-size="12" font-weight="400">5</text>
+<rect x="190" y="100" width="160" height="12" rx="6" fill="#36d8ee"/>
+<text x="475" y="111" fill="#9eb2c3" font-family="Segoe UI,Arial,sans-serif" font-size="12" font-weight="400">4</text>
 <text x="36" y="135" fill="#eaf5fa" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="400">TypeScript</text>
 <rect x="190" y="125" width="120" height="12" rx="6" fill="#36d8ee"/>
 <text x="475" y="136" fill="#9eb2c3" font-family="Segoe UI,Arial,sans-serif" font-size="12" font-weight="400">3</text>
@@ -22,13 +22,13 @@
 <text x="550" y="75" fill="#9eb2c3" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="400">Source files touched in analyzed commits (30d)</text>
 <text x="550" y="110" fill="#eaf5fa" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="400">TypeScript</text>
 <rect x="730" y="100" width="140" height="12" rx="6" fill="#a99aff"/>
-<text x="884" y="111" fill="#9eb2c3" font-family="Segoe UI,Arial,sans-serif" font-size="12" font-weight="400">50</text>
-<text x="550" y="135" fill="#eaf5fa" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="400">Python</text>
+<text x="884" y="111" fill="#9eb2c3" font-family="Segoe UI,Arial,sans-serif" font-size="12" font-weight="400">36</text>
+<text x="550" y="135" fill="#eaf5fa" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="400">JavaScript</text>
 <rect x="730" y="125" width="140" height="12" rx="6" fill="#a99aff"/>
-<text x="884" y="136" fill="#9eb2c3" font-family="Segoe UI,Arial,sans-serif" font-size="12" font-weight="400">35</text>
-<text x="550" y="160" fill="#eaf5fa" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="400">JavaScript</text>
+<text x="884" y="136" fill="#9eb2c3" font-family="Segoe UI,Arial,sans-serif" font-size="12" font-weight="400">26</text>
+<text x="550" y="160" fill="#eaf5fa" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="400">Python</text>
 <rect x="730" y="150" width="140" height="12" rx="6" fill="#a99aff"/>
-<text x="884" y="161" fill="#9eb2c3" font-family="Segoe UI,Arial,sans-serif" font-size="12" font-weight="400">26</text>
+<text x="884" y="161" fill="#9eb2c3" font-family="Segoe UI,Arial,sans-serif" font-size="12" font-weight="400">14</text>
 <text x="550" y="185" fill="#eaf5fa" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="400">Java</text>
 <rect x="730" y="175" width="140" height="12" rx="6" fill="#a99aff"/>
 <text x="884" y="186" fill="#9eb2c3" font-family="Segoe UI,Arial,sans-serif" font-size="12" font-weight="400">13</text>
