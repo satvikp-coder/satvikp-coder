@@ -21,7 +21,7 @@ I’m a BS (Hons) Computer Science student at Ahmedabad University. I’m intere
 
 <p align="center"><img src="assets/activity.svg" alt="Development activity and thirty day contribution strip" width="960"></p>
 
-**Recently active public repositories:** [Microsoft-Game-Developer-Hackathon-2026/Pulse-Xi](https://github.com/Microsoft-Game-Developer-Hackathon-2026/Pulse-Xi), [satvikp-coder/Ras](https://github.com/satvikp-coder/Ras), [satvikp-coder/CSC360-AU2520039](https://github.com/satvikp-coder/CSC360-AU2520039), [varunkarthic/CSC360-Group2](https://github.com/varunkarthic/CSC360-Group2)
+**Recently active public repositories:** [Microsoft-Game-Developer-Hackathon-2026/Pulse-Xi](https://github.com/Microsoft-Game-Developer-Hackathon-2026/Pulse-Xi), [satvikp-coder/Ras](https://github.com/satvikp-coder/Ras), [satvikp-coder/CSC360-AU2520039](https://github.com/satvikp-coder/CSC360-AU2520039), [satvikp-coder/phishing-slm-research](https://github.com/satvikp-coder/phishing-slm-research)
 
 ### Selected work
 
