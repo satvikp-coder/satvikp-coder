@@ -21,7 +21,7 @@ I’m a BS (Hons) Computer Science student at Ahmedabad University. I’m intere
 
 <p align="center"><img src="assets/activity.svg" alt="Development activity and thirty day contribution strip" width="960"></p>
 
-**Recently active public repositories:** [Microsoft-Game-Developer-Hackathon-2026/Pulse-Xi](https://github.com/Microsoft-Game-Developer-Hackathon-2026/Pulse-Xi), [satvikp-coder/terrascope-ai](https://github.com/satvikp-coder/terrascope-ai), [satvikp-coder/Ras](https://github.com/satvikp-coder/Ras), [satvikp-coder/CSC360-AU2520039](https://github.com/satvikp-coder/CSC360-AU2520039)
+**Recently active public repositories:** [Microsoft-Game-Developer-Hackathon-2026/Pulse-Xi](https://github.com/Microsoft-Game-Developer-Hackathon-2026/Pulse-Xi), [satvikp-coder/phishing-slm-research](https://github.com/satvikp-coder/phishing-slm-research), [satvikp-coder/terrascope-ai](https://github.com/satvikp-coder/terrascope-ai), [satvikp-coder/Ras](https://github.com/satvikp-coder/Ras)
 
 ### Selected work
 
@@ -39,11 +39,11 @@ I’m a BS (Hons) Computer Science student at Ahmedabad University. I’m intere
 
 ### Recent public activity
 
+- 2026-10-18 · Pushed code in [satvikp-coder/phishing-slm-research](https://github.com/satvikp-coder/phishing-slm-research)
+- 2026-10-17 · Pushed code in [satvikp-coder/terrascope-ai](https://github.com/satvikp-coder/terrascope-ai)
 - 2026-10-16 · Pushed code in [Microsoft-Game-Developer-Hackathon-2026/Pulse-Xi](https://github.com/Microsoft-Game-Developer-Hackathon-2026/Pulse-Xi)
-- 2026-10-17 · Pushed code in [satvikp-coder/phishing-slm-research](https://github.com/satvikp-coder/phishing-slm-research)
-- 2026-10-16 · Merged a pull request in [Microsoft-Game-Developer-Hackathon-2026/Pulse-Xi](https://github.com/Microsoft-Game-Developer-Hackathon-2026/Pulse-Xi)
-- 2026-10-16 · Opened a pull request in [Microsoft-Game-Developer-Hackathon-2026/Pulse-Xi](https://github.com/Microsoft-Game-Developer-Hackathon-2026/Pulse-Xi)
-- 2026-10-12 · Pushed code in [satvikp-coder/demo-group7](https://github.com/satvikp-coder/demo-group7)
+- 2026-10-18 · Merged a pull request in [Microsoft-Game-Developer-Hackathon-2026/Pulse-Xi](https://github.com/Microsoft-Game-Developer-Hackathon-2026/Pulse-Xi)
+- 2026-10-18 · Opened a pull request in [Microsoft-Game-Developer-Hackathon-2026/Pulse-Xi](https://github.com/Microsoft-Game-Developer-Hackathon-2026/Pulse-Xi)
 
 <sub>Updated 2026-10-18 UTC · Public GitHub data · See [metric definitions](docs/SETUP.md#metric-definitions).</sub>
 <!-- PROFILE:GENERATED:END -->
