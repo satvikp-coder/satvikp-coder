@@ -19,7 +19,7 @@ START = "<!-- PROFILE:GENERATED:START -->"
 END = "<!-- PROFILE:GENERATED:END -->"
 COLORS = {"bg": "#0b1020", "panel": "#111b2d", "line": "#25405a", "text": "#eaf5fa", "muted": "#9eb2c3", "cyan": "#36d8ee", "violet": "#a99aff", "green": "#62d7a2"}
 LANG_EXT = {".py": "Python", ".js": "JavaScript", ".jsx": "JavaScript", ".ts": "TypeScript", ".tsx": "TypeScript", ".java": "Java", ".c": "C", ".cpp": "C++", ".cc": "C++", ".sql": "SQL", ".ipynb": "Jupyter Notebook"}
-GRAPHQL = """query($login:String!, $from:DateTime!, $to:DateTime!) { user(login:$login) { login contributionsCollection(from:$from,to:$to) { contributionCalendar { totalContributions weeks { contributionDays { date contributionCount } } } totalCommitContributions totalPullRequestContributions } } }"""
+GRAPHQL = """query($login:String!, $from:DateTime!, $to:DateTime!) { user(login:$login) { login contributionsCollection(from:$from,to:$to) { contributionCalendar { totalContributions weeks { contributionDays { date contributionCount } } } totalCommitContributions totalPullRequestContributions commitContributionsByRepository(maxRepositories:50) { repository { nameWithOwner isPrivate } } } } }"""
 
 
 class APIError(RuntimeError):
@@ -123,13 +123,16 @@ def streaks(days: list[dict], today) -> tuple[int, int]:
     return current, longest
 
 
-def select_repositories(repos: list[dict], events: list[dict], login: str, limit: int, public_names: set[str]) -> list[str]:
+def select_repositories(repos: list[dict], events: list[dict], login: str, limit: int, public_names: set[str], contributed_names: list[str] | None = None) -> list[str]:
     owned = [r for r in repos if not r.get("fork") and not r.get("archived") and r.get("size", 0) > 0 and r.get("name", "").lower() != login.lower()]
     owned.sort(key=lambda r: r.get("pushed_at") or "", reverse=True)
     names = [r["full_name"] for r in owned]
     for event in events:
         repo = (event.get("repo") or {}).get("name", "")
         if repo and repo in public_names and repo not in names and event.get("type") in ("PushEvent", "PullRequestEvent"):
+            names.append(repo)
+    for repo in contributed_names or []:
+        if repo in public_names and repo not in names and repo.lower() != (login + "/" + login).lower():
             names.append(repo)
     return names[:limit]
 
@@ -182,11 +185,28 @@ def collect(api: GitHub, config: dict, now: datetime | None = None) -> dict:
     collection = (((graph.get("data") or {}).get("user") or {}).get("contributionsCollection"))
     if not collection:
         raise APIError("Missing GitHub contribution data")
+    contributed_names = []
+    for entry in collection.get("commitContributionsByRepository") or []:
+        repository = entry.get("repository") or {}
+        if not repository.get("isPrivate") and repository.get("nameWithOwner"):
+            contributed_names.append(repository["nameWithOwner"])
+    for name in contributed_names:
+        if name in public_names:
+            continue
+        try:
+            repository = api.request("repos/" + name)
+        except APIError as exc:
+            if "404" in str(exc):
+                continue
+            raise
+        if not repository.get("private") and repository.get("visibility", "public") == "public":
+            public_names.add(name)
+            public_info[name] = repository
     calendar = collection["contributionCalendar"]
     days = [day for week in calendar["weeks"] for day in week["contributionDays"]]
     aliases = {x.lower() for x in config.get("author_emails", [])}
     repository_limit = int(config.get("repository_limit", 20))
-    repository_candidates = select_repositories(repos, events, login, repository_limit + 1, public_names)
+    repository_candidates = select_repositories(repos, events, login, repository_limit + 1, public_names, contributed_names)
     selected = repository_candidates[:repository_limit]
     cutoff30, cutoff7 = now - timedelta(days=30), now - timedelta(days=7)
     detail_limit = int(config.get("commit_detail_limit", 120))

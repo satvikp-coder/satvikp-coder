@@ -2,7 +2,7 @@
   "username": "satvikp-coder",
   "display_name": "Satvik Patel",
   "featured_repositories": ["sentinel", "demo-group7", "phishing-slm-research", "Ras", "Amdavad-online", "CSC360-AU2520039"],
-  "repository_limit": 20,
+  "repository_limit": 25,
   "commit_detail_limit": 120,
   "commit_list_limit_per_repository": 100,
   "branch_limit_per_repository": 3,

@@ -86,23 +86,31 @@ class ProfileTests(unittest.TestCase):
         commit = {"sha": "abc", "author": {"login": "satvikp-coder"}, "commit": {"author": {"date": "2026-10-12T10:00:00Z", "email": "a@example.com"}, "message": "feature"}}
         class Fake:
             requests = 0
+            scanned = []
             def request(self, path, payload=None):
                 if path == "user": return {"login": "satvikp-coder"}
                 if path == "users/satvikp-coder": return {"login": "satvikp-coder"}
                 if path == "repos/satvikp-coder/old-private": return {"private": True, "visibility": "private"}
-                if path == "graphql": return {"data": {"user": {"contributionsCollection": {"contributionCalendar": {"totalContributions": 1, "weeks": [{"contributionDays": [{"date": "2026-10-13", "contributionCount": 1}]}]}, "totalCommitContributions": 1, "totalPullRequestContributions": 0}}}}
+                if path == "repos/other/public": return {"full_name": "other/public", "default_branch": "main", "private": False, "visibility": "public"}
+                if path == "graphql": return {"data": {"user": {"contributionsCollection": {"contributionCalendar": {"totalContributions": 1, "weeks": [{"contributionDays": [{"date": "2026-10-13", "contributionCount": 1}]}]}, "totalCommitContributions": 1, "totalPullRequestContributions": 0, "commitContributionsByRepository": [{"repository": {"nameWithOwner": "satvikp-coder/old-private", "isPrivate": True}}, {"repository": {"nameWithOwner": "other/public", "isPrivate": False}}]}}}}
                 if path == "repos/satvikp-coder/code/commits/abc": return {"stats": {"additions": 8, "deletions": 3}, "files": [{"filename": "app.py"}]}
                 raise AssertionError(path)
             def pages(self, path, *args, **kwargs):
+                self.scanned.append(path)
                 if path.startswith("users/satvikp-coder/repos"): return [owned]
                 if path.startswith("users/satvikp-coder/events/public"): return [event("satvikp-coder/old-private"), event("satvikp-coder/code")]
                 if path.startswith("repos/satvikp-coder/code/branches"): return [{"name": "main"}, {"name": "feature"}]
                 if path.startswith("repos/satvikp-coder/code/commits?"): return [commit]
+                if path.startswith("repos/other/public/branches"): return [{"name": "main"}]
+                if path.startswith("repos/other/public/commits?"): return []
                 raise AssertionError(path)
-        data = collect(Fake(), {"username": "satvikp-coder", "repository_limit": 20, "commit_detail_limit": 120}, now)
+        api = Fake()
+        data = collect(api, {"username": "satvikp-coder", "repository_limit": 20, "commit_detail_limit": 120}, now)
         self.assertEqual((data["commits_7"], data["added_30"], data["deleted_30"]), (1,8,3))
         self.assertEqual(data["changed_file_languages"], [("Python",1)])
         self.assertFalse(any("old-private" in item["repo"] for item in data["events"]))
+        self.assertTrue(any(path.startswith("repos/other/public/commits?") for path in api.scanned))
+        self.assertFalse(any(path.startswith("repos/satvikp-coder/old-private/commits?") for path in api.scanned))
 
     def test_detail_cap_prefers_newest_commit_across_repositories(self):
         now = datetime(2026, 10, 13, 12, tzinfo=timezone.utc)
