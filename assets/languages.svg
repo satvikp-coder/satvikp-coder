@@ -32,7 +32,7 @@
 <text x="550" y="185" fill="#eaf5fa" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="400">SQL</text>
 <rect x="730" y="175" width="33" height="12" rx="6" fill="#a99aff"/>
 <text x="884" y="186" fill="#9eb2c3" font-family="Segoe UI,Arial,sans-serif" font-size="12" font-weight="400">3</text>
-<text x="550" y="210" fill="#eaf5fa" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="400">Java</text>
-<rect x="730" y="200" width="33" height="12" rx="6" fill="#a99aff"/>
-<text x="884" y="211" fill="#9eb2c3" font-family="Segoe UI,Arial,sans-serif" font-size="12" font-weight="400">3</text>
+<text x="550" y="210" fill="#eaf5fa" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="400">Jupyter Notebook</text>
+<rect x="730" y="200" width="11" height="12" rx="6" fill="#a99aff"/>
+<text x="884" y="211" fill="#9eb2c3" font-family="Segoe UI,Arial,sans-serif" font-size="12" font-weight="400">1</text>
 </svg>
