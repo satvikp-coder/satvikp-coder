@@ -104,6 +104,36 @@ class ProfileTests(unittest.TestCase):
         self.assertEqual(data["changed_file_languages"], [("Python",1)])
         self.assertFalse(any("old-private" in item["repo"] for item in data["events"]))
 
+    def test_detail_cap_prefers_newest_commit_across_repositories(self):
+        now = datetime(2026, 10, 13, 12, tzinfo=timezone.utc)
+        def repo(name, pushed):
+            return {"name": name, "full_name": "satvikp-coder/" + name, "default_branch": "main", "private": False, "fork": False, "size": 1, "pushed_at": pushed, "language": "Python", "stargazers_count": 0}
+        def commit(sha, date):
+            return {"sha": sha, "author": {"login": "satvikp-coder"}, "commit": {"author": {"date": date}, "message": "work"}}
+        class Fake:
+            requests = 0
+            details = []
+            def request(self, path, payload=None):
+                if path == "user": return {"login": "satvikp-coder"}
+                if path == "users/satvikp-coder": return {"login": "satvikp-coder"}
+                if path == "graphql": return {"data": {"user": {"contributionsCollection": {"contributionCalendar": {"totalContributions": 2, "weeks": [{"contributionDays": [{"date": "2026-10-13", "contributionCount": 2}]}]}, "totalCommitContributions": 2, "totalPullRequestContributions": 0}}}}
+                if "/commits/" in path:
+                    self.details.append(path)
+                    return {"stats": {"additions": 1, "deletions": 0}, "files": []}
+                raise AssertionError(path)
+            def pages(self, path, *args, **kwargs):
+                if path.startswith("users/satvikp-coder/repos"): return [repo("old", "2026-10-13T11:00:00Z"), repo("new", "2026-10-12T11:00:00Z")]
+                if path.startswith("users/satvikp-coder/events/public"): return []
+                if path.endswith("/branches"): return [{"name": "main"}]
+                if path.startswith("repos/satvikp-coder/old/commits?"): return [commit("oldsha", "2026-10-01T10:00:00Z")]
+                if path.startswith("repos/satvikp-coder/new/commits?"): return [commit("newsha", "2026-10-12T10:00:00Z")]
+                raise AssertionError(path)
+        api = Fake()
+        data = collect(api, {"username": "satvikp-coder", "repository_limit": 20, "commit_detail_limit": 1}, now)
+        self.assertEqual(api.details, ["repos/satvikp-coder/new/commits/newsha"])
+        self.assertEqual(data["commits_30"], 1)
+        self.assertTrue(data["truncated"])
+
 
 if __name__ == "__main__":
     unittest.main()

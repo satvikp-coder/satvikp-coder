@@ -186,17 +186,15 @@ def collect(api: GitHub, config: dict, now: datetime | None = None) -> dict:
     days = [day for week in calendar["weeks"] for day in week["contributionDays"]]
     aliases = {x.lower() for x in config.get("author_emails", [])}
     repository_limit = int(config.get("repository_limit", 20))
-    candidates = select_repositories(repos, events, login, repository_limit + 1, public_names)
-    selected = candidates[:repository_limit]
+    repository_candidates = select_repositories(repos, events, login, repository_limit + 1, public_names)
+    selected = repository_candidates[:repository_limit]
     cutoff30, cutoff7 = now - timedelta(days=30), now - timedelta(days=7)
     detail_limit = int(config.get("commit_detail_limit", 120))
     per_repo = int(config.get("commit_list_limit_per_repository", 100))
     commits = []
-    truncated = len(candidates) > repository_limit
+    truncated = len(repository_candidates) > repository_limit
+    listed_candidates = {}
     for repo in selected:
-        if len(commits) >= detail_limit:
-            truncated = True
-            break
         try:
             branches = api.pages(f"repos/{repo}/branches", 1, bounded=True)
         except APIError as exc:
@@ -205,7 +203,6 @@ def collect(api: GitHub, config: dict, now: datetime | None = None) -> dict:
             raise
         branch_names, branch_capped = select_branches(public_info[repo], branches, events, int(config.get("branch_limit_per_repository", 3)))
         truncated = truncated or branch_capped or len(branches) >= 100
-        listed_by_sha = {}
         for branch in branch_names:
             for author in [login, *sorted(aliases)]:
                 query = urllib.parse.urlencode({"sha": branch, "author": author, "since": cutoff30.isoformat(), "until": now.isoformat()})
@@ -218,25 +215,21 @@ def collect(api: GitHub, config: dict, now: datetime | None = None) -> dict:
                 if len(author_commits) >= per_repo:
                     truncated = True
                 for item in author_commits[:per_repo]:
-                    listed_by_sha[item["sha"]] = item
-        listed = list(listed_by_sha.values())
-        if len(listed) >= per_repo:
-            truncated = True
-        for item in listed[:per_repo]:
-            item["repository"] = repo
-            if not personal_commit(item, login, aliases, login + "/" + login):
-                continue
-            date = parsedate(((item.get("commit") or {}).get("author") or {})["date"])
-            if date < cutoff30 or date > now:
-                continue
-            if len(commits) >= detail_limit:
-                truncated = True
-                break
-            detail = api.request(f"repos/{repo}/commits/{item['sha']}")
-            stats = detail.get("stats")
-            if not isinstance(stats, dict) or "additions" not in stats or "deletions" not in stats:
-                raise APIError(f"Missing diff statistics for {repo}@{item['sha']}")
-            commits.append({"repo": repo, "sha": item["sha"], "date": date, "additions": int(stats["additions"]), "deletions": int(stats["deletions"]), "files": detail.get("files") or []})
+                    item["repository"] = repo
+                    if not personal_commit(item, login, aliases, login + "/" + login):
+                        continue
+                    date = parsedate(((item.get("commit") or {}).get("author") or {})["date"])
+                    if cutoff30 <= date <= now:
+                        listed_candidates[(repo, item["sha"])] = date
+    ordered = sorted(((date, repo, sha) for (repo, sha), date in listed_candidates.items()), reverse=True)
+    if len(ordered) > detail_limit:
+        truncated = True
+    for date, repo, sha in ordered[:detail_limit]:
+        detail = api.request(f"repos/{repo}/commits/{sha}")
+        stats = detail.get("stats")
+        if not isinstance(stats, dict) or "additions" not in stats or "deletions" not in stats:
+            raise APIError(f"Missing diff statistics for {repo}@{sha}")
+        commits.append({"repo": repo, "sha": sha, "date": date, "additions": int(stats["additions"]), "deletions": int(stats["deletions"]), "files": detail.get("files") or []})
     recent_repos = Counter(c["repo"] for c in commits)
     file_languages = Counter()
     for commit in commits:
