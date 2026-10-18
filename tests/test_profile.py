@@ -8,7 +8,7 @@ from pathlib import Path
 from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
-from profile import APIError, GitHub, author_matches, collect, personal_commit, replace_region, render_activity, render_hero, streaks, write_if_changed
+from profile import APIError, GitHub, author_matches, collect, personal_commit, replace_region, render_activity, render_hero, select_branches, streaks, write_if_changed
 
 
 class ProfileTests(unittest.TestCase):
@@ -59,6 +59,19 @@ class ProfileTests(unittest.TestCase):
             self.assertEqual(len(api.pages("users/test/repos")), 101)
             self.assertEqual(request.call_count, 2)
 
+    def test_full_bounded_event_window(self):
+        api = GitHub("test")
+        with patch.object(api, "request", side_effect=[[{}]*100, [{}]*100, [{}]*100]) as request:
+            self.assertEqual(len(api.pages("users/test/events/public", 3, bounded=True)), 300)
+            self.assertEqual(request.call_count, 3)
+
+    def test_branch_selection_prioritizes_default_and_recent_push(self):
+        repo = {"full_name": "satvikp-coder/code", "default_branch": "main"}
+        event = {"repo": {"name": "satvikp-coder/code"}, "type": "PushEvent", "payload": {"ref": "refs/heads/feature"}}
+        selected, capped = select_branches(repo, [{"name": "old"}, {"name": "feature"}], [event], 2)
+        self.assertEqual(selected, ["main", "feature"])
+        self.assertTrue(capped)
+
     def test_rate_limit_failure(self):
         api = GitHub("test")
         error = urllib.error.HTTPError("https://api.github.com/x", 403, "forbidden", {"X-RateLimit-Remaining": "0"}, None)
@@ -68,7 +81,7 @@ class ProfileTests(unittest.TestCase):
 
     def test_collection_counts_diffs_and_excludes_private_event_repo(self):
         now = datetime(2026, 10, 13, 12, tzinfo=timezone.utc)
-        owned = {"name": "code", "full_name": "satvikp-coder/code", "private": False, "fork": False, "size": 4, "pushed_at": "2026-10-13T10:00:00Z", "language": "Python", "stargazers_count": 2}
+        owned = {"name": "code", "full_name": "satvikp-coder/code", "default_branch": "main", "private": False, "fork": False, "size": 4, "pushed_at": "2026-10-13T10:00:00Z", "language": "Python", "stargazers_count": 2}
         event = lambda repo: {"repo": {"name": repo}, "type": "PushEvent", "created_at": "2026-10-13T10:00:00Z", "payload": {}}
         commit = {"sha": "abc", "author": {"login": "satvikp-coder"}, "commit": {"author": {"date": "2026-10-12T10:00:00Z", "email": "a@example.com"}, "message": "feature"}}
         class Fake:
@@ -83,6 +96,7 @@ class ProfileTests(unittest.TestCase):
             def pages(self, path, *args, **kwargs):
                 if path.startswith("users/satvikp-coder/repos"): return [owned]
                 if path.startswith("users/satvikp-coder/events/public"): return [event("satvikp-coder/old-private"), event("satvikp-coder/code")]
+                if path.startswith("repos/satvikp-coder/code/branches"): return [{"name": "main"}, {"name": "feature"}]
                 if path.startswith("repos/satvikp-coder/code/commits?"): return [commit]
                 raise AssertionError(path)
         data = collect(Fake(), {"username": "satvikp-coder", "repository_limit": 20, "commit_detail_limit": 120}, now)

@@ -5,6 +5,7 @@
   "repository_limit": 20,
   "commit_detail_limit": 120,
   "commit_list_limit_per_repository": 100,
+  "branch_limit_per_repository": 3,
   "author_emails": [],
   "linkedin_url": "",
   "portfolio_url": "",

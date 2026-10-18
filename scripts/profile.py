@@ -134,6 +134,20 @@ def select_repositories(repos: list[dict], events: list[dict], login: str, limit
     return names[:limit]
 
 
+def select_branches(repository: dict, branches: list[dict], events: list[dict], limit: int) -> tuple[list[str], bool]:
+    name = repository["full_name"]
+    candidates = [repository.get("default_branch") or "main"]
+    for event in events:
+        if (event.get("repo") or {}).get("name") != name or event.get("type") != "PushEvent":
+            continue
+        ref = (event.get("payload") or {}).get("ref") or ""
+        if ref.startswith("refs/heads/"):
+            candidates.append(ref[len("refs/heads/"):])
+    candidates.extend(branch.get("name") for branch in branches if branch.get("name"))
+    unique = list(dict.fromkeys(candidates))
+    return unique[:limit], len(unique) > limit
+
+
 def collect(api: GitHub, config: dict, now: datetime | None = None) -> dict:
     now = now or datetime.now(timezone.utc)
     login = config["username"]
@@ -147,8 +161,11 @@ def collect(api: GitHub, config: dict, now: datetime | None = None) -> dict:
     user = api.request("users/" + login)
     repos = api.pages("users/" + login + "/repos?type=public&sort=updated", 2)
     repos = [r for r in repos if not r.get("private")]
-    events = api.pages("users/" + login + "/events/public", 3)
-    public_names = {r["full_name"] for r in repos}
+    # GitHub exposes at most 300 recent public events. A full third page is
+    # normal, not a pagination failure.
+    events = api.pages("users/" + login + "/events/public", 3, bounded=True)
+    public_info = {r["full_name"]: r for r in repos}
+    public_names = set(public_info)
     event_names = {(e.get("repo") or {}).get("name", "") for e in events} - public_names - {""}
     for name in sorted(event_names):
         try:
@@ -159,6 +176,7 @@ def collect(api: GitHub, config: dict, now: datetime | None = None) -> dict:
             raise
         if not repository.get("private") and repository.get("visibility", "public") == "public":
             public_names.add(name)
+            public_info[name] = repository
     from_date = now - timedelta(days=365)
     graph = api.request("graphql", {"query": GRAPHQL, "variables": {"login": login, "from": from_date.isoformat(), "to": now.isoformat()}})
     collection = (((graph.get("data") or {}).get("user") or {}).get("contributionsCollection"))
@@ -167,29 +185,40 @@ def collect(api: GitHub, config: dict, now: datetime | None = None) -> dict:
     calendar = collection["contributionCalendar"]
     days = [day for week in calendar["weeks"] for day in week["contributionDays"]]
     aliases = {x.lower() for x in config.get("author_emails", [])}
-    selected = select_repositories(repos, events, login, int(config.get("repository_limit", 20)), public_names)
+    repository_limit = int(config.get("repository_limit", 20))
+    candidates = select_repositories(repos, events, login, repository_limit + 1, public_names)
+    selected = candidates[:repository_limit]
     cutoff30, cutoff7 = now - timedelta(days=30), now - timedelta(days=7)
     detail_limit = int(config.get("commit_detail_limit", 120))
     per_repo = int(config.get("commit_list_limit_per_repository", 100))
     commits = []
-    truncated = False
+    truncated = len(candidates) > repository_limit
     for repo in selected:
         if len(commits) >= detail_limit:
             truncated = True
             break
+        try:
+            branches = api.pages(f"repos/{repo}/branches", 1, bounded=True)
+        except APIError as exc:
+            if "404" in str(exc) or "409" in str(exc):
+                continue
+            raise
+        branch_names, branch_capped = select_branches(public_info[repo], branches, events, int(config.get("branch_limit_per_repository", 3)))
+        truncated = truncated or branch_capped or len(branches) >= 100
         listed_by_sha = {}
-        for author in [login, *sorted(aliases)]:
-            query = urllib.parse.urlencode({"author": author, "since": cutoff30.isoformat(), "until": now.isoformat()})
-            try:
-                author_commits = api.pages(f"repos/{repo}/commits?{query}", max(1, (per_repo + 99) // 100), bounded=True)
-            except APIError as exc:
-                if "404" in str(exc) or "409" in str(exc):
-                    continue  # A public event may refer to a deleted/empty repository.
-                raise
-            if len(author_commits) >= per_repo:
-                truncated = True
-            for item in author_commits[:per_repo]:
-                listed_by_sha[item["sha"]] = item
+        for branch in branch_names:
+            for author in [login, *sorted(aliases)]:
+                query = urllib.parse.urlencode({"sha": branch, "author": author, "since": cutoff30.isoformat(), "until": now.isoformat()})
+                try:
+                    author_commits = api.pages(f"repos/{repo}/commits?{query}", max(1, (per_repo + 99) // 100), bounded=True)
+                except APIError as exc:
+                    if "404" in str(exc) or "409" in str(exc):
+                        continue  # A public event may refer to a deleted/empty repository.
+                    raise
+                if len(author_commits) >= per_repo:
+                    truncated = True
+                for item in author_commits[:per_repo]:
+                    listed_by_sha[item["sha"]] = item
         listed = list(listed_by_sha.values())
         if len(listed) >= per_repo:
             truncated = True
@@ -299,7 +328,7 @@ def render_activity(data: dict) -> str:
         count=day["contributionCount"]
         color=COLORS["panel"] if count==0 else ("#245c65" if count<3 else "#278b91" if count<7 else COLORS["green"])
         s.append(f'<rect x="{36+i*29}" y="195" width="23" height="25" rx="5" fill="{color}"/>')
-    s += [text_svg(36,246,"Each square is one calendar day; GitHub contributions include more than commits.",12,"muted"),text_svg(36,272,"Diff additions/deletions are changed lines, not original lines of code.",12,"muted"),text_svg(922,293,"SAMPLE CAPPED" if data["truncated"] else "ALL MATCHED COMMITS ANALYZED",11,"violet",600,"end"),"</svg>"]
+    s += [text_svg(36,246,"Each square is one calendar day; GitHub contributions include more than commits.",12,"muted"),text_svg(36,272,"Diff additions/deletions are changed lines, not original lines of code.",12,"muted"),text_svg(922,293,"SAMPLE CAPPED" if data["truncated"] else "BOUNDED PUBLIC COMMIT SAMPLE",11,"violet",600,"end"),"</svg>"]
     return "\n".join(s)+"\n"
 
 
