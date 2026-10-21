@@ -21,7 +21,7 @@ I’m a BS (Hons) Computer Science student at Ahmedabad University. I’m intere
 
 <p align="center"><img src="assets/activity.svg" alt="Development activity and thirty day contribution strip" width="960"></p>
 
-**Recently active public repositories:** [Microsoft-Game-Developer-Hackathon-2026/Pulse-Xi](https://github.com/Microsoft-Game-Developer-Hackathon-2026/Pulse-Xi), [satvikp-coder/phishing-slm-research](https://github.com/satvikp-coder/phishing-slm-research), [satvikp-coder/terrascope-ai](https://github.com/satvikp-coder/terrascope-ai), [satvikp-coder/Ras](https://github.com/satvikp-coder/Ras)
+**Recently active public repositories:** [Microsoft-Game-Developer-Hackathon-2026/Pulse-Xi](https://github.com/Microsoft-Game-Developer-Hackathon-2026/Pulse-Xi), [satvikp-coder/phishing-slm-research](https://github.com/satvikp-coder/phishing-slm-research), [satvikp-coder/terrascope-ai](https://github.com/satvikp-coder/terrascope-ai), [satvikp-coder/demo-group7](https://github.com/satvikp-coder/demo-group7)
 
 ### Selected work
 
@@ -39,10 +39,10 @@ I’m a BS (Hons) Computer Science student at Ahmedabad University. I’m intere
 
 ### Recent public activity
 
-- 2026-10-19 · Pushed code in [satvikp-coder/phishing-slm-research](https://github.com/satvikp-coder/phishing-slm-research)
 - 2026-10-21 · Opened a pull request in [Microsoft-Game-Developer-Hackathon-2026/Pulse-Xi](https://github.com/Microsoft-Game-Developer-Hackathon-2026/Pulse-Xi)
 - 2026-10-21 · Pushed code in [Microsoft-Game-Developer-Hackathon-2026/Pulse-Xi](https://github.com/Microsoft-Game-Developer-Hackathon-2026/Pulse-Xi)
 - 2026-10-21 · Merged a pull request in [Microsoft-Game-Developer-Hackathon-2026/Pulse-Xi](https://github.com/Microsoft-Game-Developer-Hackathon-2026/Pulse-Xi)
+- 2026-10-19 · Pushed code in [satvikp-coder/phishing-slm-research](https://github.com/satvikp-coder/phishing-slm-research)
 - 2026-10-20 · Merged a pull request in [satvikp-coder/demo-group7](https://github.com/satvikp-coder/demo-group7)
 
 <sub>Updated 2026-10-21 UTC · Public GitHub data · See [metric definitions](docs/SETUP.md#metric-definitions).</sub>
