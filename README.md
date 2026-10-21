@@ -39,11 +39,11 @@ I’m a BS (Hons) Computer Science student at Ahmedabad University. I’m intere
 
 ### Recent public activity
 
+- 2026-10-19 · Pushed code in [satvikp-coder/phishing-slm-research](https://github.com/satvikp-coder/phishing-slm-research)
 - 2026-10-21 · Opened a pull request in [Microsoft-Game-Developer-Hackathon-2026/Pulse-Xi](https://github.com/Microsoft-Game-Developer-Hackathon-2026/Pulse-Xi)
-- 2026-10-21 · Merged a pull request in [Microsoft-Game-Developer-Hackathon-2026/Pulse-Xi](https://github.com/Microsoft-Game-Developer-Hackathon-2026/Pulse-Xi)
 - 2026-10-21 · Pushed code in [Microsoft-Game-Developer-Hackathon-2026/Pulse-Xi](https://github.com/Microsoft-Game-Developer-Hackathon-2026/Pulse-Xi)
+- 2026-10-21 · Merged a pull request in [Microsoft-Game-Developer-Hackathon-2026/Pulse-Xi](https://github.com/Microsoft-Game-Developer-Hackathon-2026/Pulse-Xi)
 - 2026-10-20 · Merged a pull request in [satvikp-coder/demo-group7](https://github.com/satvikp-coder/demo-group7)
-- 2026-10-20 · Opened a pull request in [satvikp-coder/demo-group7](https://github.com/satvikp-coder/demo-group7)
 
 <sub>Updated 2026-10-21 UTC · Public GitHub data · See [metric definitions](docs/SETUP.md#metric-definitions).</sub>
 <!-- PROFILE:GENERATED:END -->
