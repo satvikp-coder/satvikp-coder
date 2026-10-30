@@ -21,7 +21,7 @@ I’m a BS (Hons) Computer Science student at Ahmedabad University. I’m intere
 
 <p align="center"><img src="assets/activity.svg" alt="Development activity and thirty day contribution strip" width="960"></p>
 
-**Recently active public repositories:** [Microsoft-Game-Developer-Hackathon-2026/Pulse-Xi](https://github.com/Microsoft-Game-Developer-Hackathon-2026/Pulse-Xi), [satvikp-coder/phishing-slm-research](https://github.com/satvikp-coder/phishing-slm-research), [satvikp-coder/CSC360-AU2520039](https://github.com/satvikp-coder/CSC360-AU2520039), [satvikp-coder/PhotoProof](https://github.com/satvikp-coder/PhotoProof)
+**Recently active public repositories:** [Microsoft-Game-Developer-Hackathon-2026/Pulse-Xi](https://github.com/Microsoft-Game-Developer-Hackathon-2026/Pulse-Xi), [satvikp-coder/phishing-slm-research](https://github.com/satvikp-coder/phishing-slm-research), [satvikp-coder/PhotoProof](https://github.com/satvikp-coder/PhotoProof), [satvikp-coder/CSC360-AU2520039](https://github.com/satvikp-coder/CSC360-AU2520039)
 
 ### Selected work
 
@@ -39,11 +39,11 @@ I’m a BS (Hons) Computer Science student at Ahmedabad University. I’m intere
 
 ### Recent public activity
 
+- 2026-10-30 · Opened a pull request in [satvikp-coder/PhotoProof](https://github.com/satvikp-coder/PhotoProof)
+- 2026-10-29 · Pushed code in [satvikp-coder/Nest](https://github.com/satvikp-coder/Nest)
 - 2026-10-27 · Pushed code in [Microsoft-Game-Developer-Hackathon-2026/Pulse-Xi](https://github.com/Microsoft-Game-Developer-Hackathon-2026/Pulse-Xi)
 - 2026-10-27 · Pushed code in [satvikp-coder/CSC360-AU2520039](https://github.com/satvikp-coder/CSC360-AU2520039)
 - 2026-10-26 · Opened a pull request in [Microsoft-Game-Developer-Hackathon-2026/Pulse-Xi](https://github.com/Microsoft-Game-Developer-Hackathon-2026/Pulse-Xi)
-- 2026-10-26 · Merged a pull request in [Microsoft-Game-Developer-Hackathon-2026/Pulse-Xi](https://github.com/Microsoft-Game-Developer-Hackathon-2026/Pulse-Xi)
-- 2026-10-24 · Pushed code in [satvikp-coder/phishing-slm-research](https://github.com/satvikp-coder/phishing-slm-research)
 
 <sub>Updated 2026-10-30 UTC · Public GitHub data · See [metric definitions](docs/SETUP.md#metric-definitions).</sub>
 <!-- PROFILE:GENERATED:END -->
