@@ -21,7 +21,7 @@ I’m a BS (Hons) Computer Science student at Ahmedabad University. I’m intere
 
 <p align="center"><img src="assets/activity.svg" alt="Development activity and thirty day contribution strip" width="960"></p>
 
-**Recently active public repositories:** [Microsoft-Game-Developer-Hackathon-2026/Pulse-Xi](https://github.com/Microsoft-Game-Developer-Hackathon-2026/Pulse-Xi), [satvikp-coder/phishing-slm-research](https://github.com/satvikp-coder/phishing-slm-research), [satvikp-coder/PhotoProof](https://github.com/satvikp-coder/PhotoProof), [satvikp-coder/CSC360-Group2](https://github.com/satvikp-coder/CSC360-Group2)
+**Recently active public repositories:** [Microsoft-Game-Developer-Hackathon-2026/Pulse-Xi](https://github.com/Microsoft-Game-Developer-Hackathon-2026/Pulse-Xi), [satvikp-coder/PhotoProof](https://github.com/satvikp-coder/PhotoProof), [satvikp-coder/phishing-slm-research](https://github.com/satvikp-coder/phishing-slm-research), [satvikp-coder/CSC360-Group2](https://github.com/satvikp-coder/CSC360-Group2)
 
 ### Selected work
 
@@ -39,11 +39,11 @@ I’m a BS (Hons) Computer Science student at Ahmedabad University. I’m intere
 
 ### Recent public activity
 
+- 2026-11-04 · Merged a pull request in [satvikp-coder/PhotoProof](https://github.com/satvikp-coder/PhotoProof)
+- 2026-11-04 · Opened a pull request in [satvikp-coder/PhotoProof](https://github.com/satvikp-coder/PhotoProof)
 - 2026-11-03 · Pushed code in [satvikp-coder/CSC360-Group2](https://github.com/satvikp-coder/CSC360-Group2)
 - 2026-10-31 · Pushed code in [satvikp-coder/PhotoProof](https://github.com/satvikp-coder/PhotoProof)
 - 2026-10-31 · Pushed code in [satvikp-coder/demo-group7](https://github.com/satvikp-coder/demo-group7)
-- 2026-10-31 · Opened a pull request in [satvikp-coder/PhotoProof](https://github.com/satvikp-coder/PhotoProof)
-- 2026-10-29 · Pushed code in [satvikp-coder/Nest](https://github.com/satvikp-coder/Nest)
 
 <sub>Updated 2026-11-04 UTC · Public GitHub data · See [metric definitions](docs/SETUP.md#metric-definitions).</sub>
 <!-- PROFILE:GENERATED:END -->
