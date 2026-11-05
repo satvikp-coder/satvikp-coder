@@ -40,10 +40,10 @@ I’m a BS (Hons) Computer Science student at Ahmedabad University. I’m intere
 ### Recent public activity
 
 - 2026-11-04 · Pushed code in [satvikp-coder/PhotoProof](https://github.com/satvikp-coder/PhotoProof)
+- 2026-11-03 · Pushed code in [satvikp-coder/CSC360-Group2](https://github.com/satvikp-coder/CSC360-Group2)
+- 2026-11-03 · Pushed code in [satvikp-coder/CSC360-AU2520039](https://github.com/satvikp-coder/CSC360-AU2520039)
 - 2026-11-04 · Opened a pull request in [satvikp-coder/PhotoProof](https://github.com/satvikp-coder/PhotoProof)
 - 2026-11-04 · Published a release in [satvikp-coder/sentinelx](https://github.com/satvikp-coder/sentinelx)
-- 2026-11-04 · Merged a pull request in [satvikp-coder/PhotoProof](https://github.com/satvikp-coder/PhotoProof)
-- 2026-11-03 · Pushed code in [satvikp-coder/CSC360-Group2](https://github.com/satvikp-coder/CSC360-Group2)
 
 <sub>Updated 2026-11-05 UTC · Public GitHub data · See [metric definitions](docs/SETUP.md#metric-definitions).</sub>
 <!-- PROFILE:GENERATED:END -->
