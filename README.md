@@ -21,7 +21,7 @@ I’m a BS (Hons) Computer Science student at Ahmedabad University. I’m intere
 
 <p align="center"><img src="assets/activity.svg" alt="Development activity and thirty day contribution strip" width="960"></p>
 
-**Recently active public repositories:** [satvikp-coder/sentinelx](https://github.com/satvikp-coder/sentinelx), [satvikp-coder/PhotoProof](https://github.com/satvikp-coder/PhotoProof), [satvikp-coder/CSC360-Group2](https://github.com/satvikp-coder/CSC360-Group2), [satvikp-coder/CSC360-AU2520039](https://github.com/satvikp-coder/CSC360-AU2520039)
+**Recently active public repositories:** [satvikp-coder/sentinelx](https://github.com/satvikp-coder/sentinelx), [satvikp-coder/PhotoProof](https://github.com/satvikp-coder/PhotoProof), [satvikp-coder/CSC360-Group2](https://github.com/satvikp-coder/CSC360-Group2), [varunkarthic/MAT248-SVD-Image-Compression](https://github.com/varunkarthic/MAT248-SVD-Image-Compression)
 
 ### Selected work
 
@@ -39,11 +39,11 @@ I’m a BS (Hons) Computer Science student at Ahmedabad University. I’m intere
 
 ### Recent public activity
 
+- 2026-11-06 · Pushed code in [varunkarthic/MAT248-SVD-Image-Compression](https://github.com/varunkarthic/MAT248-SVD-Image-Compression)
+- 2026-11-06 · Merged a pull request in [varunkarthic/MAT248-SVD-Image-Compression](https://github.com/varunkarthic/MAT248-SVD-Image-Compression)
+- 2026-11-06 · Opened a pull request in [varunkarthic/MAT248-SVD-Image-Compression](https://github.com/varunkarthic/MAT248-SVD-Image-Compression)
+- 2026-11-06 · Opened a pull request in [satvikp-coder/CSC360-Group2](https://github.com/satvikp-coder/CSC360-Group2)
 - 2026-11-04 · Pushed code in [satvikp-coder/PhotoProof](https://github.com/satvikp-coder/PhotoProof)
-- 2026-11-03 · Pushed code in [satvikp-coder/CSC360-Group2](https://github.com/satvikp-coder/CSC360-Group2)
-- 2026-11-03 · Pushed code in [satvikp-coder/CSC360-AU2520039](https://github.com/satvikp-coder/CSC360-AU2520039)
-- 2026-11-04 · Opened a pull request in [satvikp-coder/PhotoProof](https://github.com/satvikp-coder/PhotoProof)
-- 2026-11-04 · Published a release in [satvikp-coder/sentinelx](https://github.com/satvikp-coder/sentinelx)
 
 <sub>Updated 2026-11-06 UTC · Public GitHub data · See [metric definitions](docs/SETUP.md#metric-definitions).</sub>
 <!-- PROFILE:GENERATED:END -->
