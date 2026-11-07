@@ -39,11 +39,11 @@ I’m a BS (Hons) Computer Science student at Ahmedabad University. I’m intere
 
 ### Recent public activity
 
+- 2026-11-07 · Pushed code in [satvikp-coder/makarba-360](https://github.com/satvikp-coder/makarba-360)
+- 2026-11-07 · Pushed code in [satvikp-coder/PhotoProof](https://github.com/satvikp-coder/PhotoProof)
+- 2026-11-06 · Pushed code in [satvikp-coder/CSC360-Group2](https://github.com/satvikp-coder/CSC360-Group2)
 - 2026-11-07 · Opened a pull request in [satvikp-coder/makarba-360](https://github.com/satvikp-coder/makarba-360)
 - 2026-11-07 · Merged a pull request in [satvikp-coder/makarba-360](https://github.com/satvikp-coder/makarba-360)
-- 2026-11-07 · Merged a pull request in [satvikp-coder/AuroraOS](https://github.com/satvikp-coder/AuroraOS)
-- 2026-11-07 · Pushed code in [satvikp-coder/makarba-360](https://github.com/satvikp-coder/makarba-360)
-- 2026-11-07 · Opened a pull request in [satvikp-coder/AuroraOS](https://github.com/satvikp-coder/AuroraOS)
 
 <sub>Updated 2026-11-07 UTC · Public GitHub data · See [metric definitions](docs/SETUP.md#metric-definitions).</sub>
 <!-- PROFILE:GENERATED:END -->
