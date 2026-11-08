@@ -21,7 +21,7 @@ I’m a BS (Hons) Computer Science student at Ahmedabad University. I’m intere
 
 <p align="center"><img src="assets/activity.svg" alt="Development activity and thirty day contribution strip" width="960"></p>
 
-**Recently active public repositories:** [satvikp-coder/makarba-360](https://github.com/satvikp-coder/makarba-360), [satvikp-coder/PhotoProof](https://github.com/satvikp-coder/PhotoProof), [satvikp-coder/AuroraOS](https://github.com/satvikp-coder/AuroraOS)
+**Recently active public repositories:** [satvikp-coder/makarba-360](https://github.com/satvikp-coder/makarba-360), [satvikp-coder/AuroraOS](https://github.com/satvikp-coder/AuroraOS), [satvikp-coder/PhotoProof](https://github.com/satvikp-coder/PhotoProof)
 
 ### Selected work
 
@@ -39,11 +39,11 @@ I’m a BS (Hons) Computer Science student at Ahmedabad University. I’m intere
 
 ### Recent public activity
 
+- 2026-11-07 · Pushed code in [satvikp-coder/PhotoProof](https://github.com/satvikp-coder/PhotoProof)
 - 2026-11-08 · Pushed code in [satvikp-coder/makarba-360](https://github.com/satvikp-coder/makarba-360)
 - 2026-11-08 · Pushed code in [satvikp-coder/AuroraOS](https://github.com/satvikp-coder/AuroraOS)
-- 2026-11-08 · Pushed code in [satvikp-coder/PhotoProof](https://github.com/satvikp-coder/PhotoProof)
+- 2026-11-08 · Opened a pull request in [satvikp-coder/PhotoProof](https://github.com/satvikp-coder/PhotoProof)
 - 2026-11-08 · Merged a pull request in [satvikp-coder/makarba-360](https://github.com/satvikp-coder/makarba-360)
-- 2026-11-08 · Opened a pull request in [satvikp-coder/makarba-360](https://github.com/satvikp-coder/makarba-360)
 
 <sub>Updated 2026-11-08 UTC · Public GitHub data · See [metric definitions](docs/SETUP.md#metric-definitions).</sub>
 <!-- PROFILE:GENERATED:END -->
