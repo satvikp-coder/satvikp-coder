@@ -75,7 +75,7 @@ More: [AuroraOS](https://github.com/satvikp-coder/AuroraOS) (early-stage ARM64 O
   <img width="49%" alt="Streak" src="https://streak-stats.demolab.com?user=satvikp-coder&theme=default&hide_border=false&border_radius=6" />
 </p>
 
-<sub>Cards are built every 6 hours from the GitHub API by a workflow in this repo. They count public repos I own (not forks). Line counts include data and lock files. Top languages leave out Jupyter Notebook.</sub>
+<sub>Cards are built every hour from the GitHub API by a workflow in this repo. They count public repos I own (not forks). Line counts include data and lock files. Top languages leave out Jupyter Notebook.</sub>
 
 ---
 
