@@ -46,9 +46,9 @@ CS student building tools to keep people safe online, and learning research.
 2. [sentinel](https://github.com/satvikp-coder/sentinel): security layer and dashboard for autonomous browser agents (HACK IITK 2026 Finalist). `Python`
 3. [phishing-slm-research](https://github.com/satvikp-coder/phishing-slm-research): phishing email detection with small language models vs. classical baselines. `Python`
 4. [perovskite-pce-dashboard](https://github.com/satvikp-coder/perovskite-pce-dashboard): predicts perovskite solar cell efficiency and a stability proxy. `Python`
-5. [PhotoProof](https://github.com/satvikp-coder/PhotoProof): image forgery detection and localization using digital image processing. `Python`
+5. [PhotoProof](https://github.com/satvikp-coder/PhotoProof): framework for image forgery detection. Foundation stage: the pipeline works, detectors are not built yet. `Python`
 
-More: [AuroraOS](https://github.com/satvikp-coder/AuroraOS) (ARM64 operating system, `C`) | [smart-trolley-os](https://github.com/satvikp-coder/smart-trolley-os) (Android travel-assistance launcher, `Kotlin`) | [CyberX](https://github.com/satvikp-coder/CyberX) (scam awareness, IBM Z Datathon 2025, `Python`)
+More: [AuroraOS](https://github.com/satvikp-coder/AuroraOS) (early-stage ARM64 OS kernel, `C`) | [smart-trolley-os](https://github.com/satvikp-coder/smart-trolley-os) (Android launcher built on the open-source Dashline, `Kotlin`) | [CyberX](https://github.com/satvikp-coder/CyberX) (phishing website detector, IBM Z Datathon 2025, `Python`)
 
 ## Apps on Google Play
 
