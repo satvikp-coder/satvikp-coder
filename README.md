@@ -1,55 +1,80 @@
-<p align="center"><img src="assets/hero.svg" alt="Satvik Patel — computer science student interested in cybersecurity and AI/ML" width="960"></p>
+# Hi, I'm Satvik Patel
 
-I’m a BS (Hons) Computer Science student at Ahmedabad University. I’m interested in cybersecurity, applied AI/ML, and building software that solves practical problems. My public work ranges from secure agent systems and phishing detection research to full-stack tools and coursework. I’m still learning, testing ideas, and refining how I build.
+CS student building tools to keep people safe online, and learning research.
 
-### What I work with
+## About me
 
-| Area | Technologies seen in my public projects |
-| :--- | :--- |
-| Languages | Python, Java, JavaScript, TypeScript, SQL |
-| Development | React, Express, FastAPI, PostgreSQL, SQLite, Git, GitHub |
-| AI / ML | Python notebooks, small language model research, phishing classification |
-| Security | Browser-agent safeguards, privacy-aware systems, phishing detection |
+- BSc (Hons) Computer Science at Ahmedabad University (admitted 2025), based in Ahmedabad.
+- I am interested in AI/ML security, trustworthy AI, and scam and phishing detection. I am also learning cloud (AWS).
+- Now: research on phishing detection with small language models, and a perovskite solar cell dashboard.
+- Reach me: [LinkedIn](https://www.linkedin.com/in/satvik-hitesh-patel-65b9b428a/) | University email: satvik.p@ahduni.edu.in | Personal: satvikb0301@gmail.com
 
-<!-- PROFILE:GENERATED:START -->
-### Live GitHub signal
+## What I work with
 
-<p align="center"><img src="assets/stats.svg" alt="Live GitHub statistics" width="960"></p>
-<p align="center"><img src="assets/languages.svg" alt="Language signal" width="960"></p>
+**Core**
 
-### Development activity
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+![Java](https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white)
+![Git](https://img.shields.io/badge/Git%20%2F%20GitHub-181717?style=flat-square&logo=github&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
+![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)
 
-<p align="center"><img src="assets/activity.svg" alt="Development activity and thirty day contribution strip" width="960"></p>
+**Also work with**
 
-**Recently active public repositories:** [satvikp-coder/makarba-360](https://github.com/satvikp-coder/makarba-360), [satvikp-coder/PhotoProof](https://github.com/satvikp-coder/PhotoProof), [satvikp-coder/AuroraOS](https://github.com/satvikp-coder/AuroraOS)
+![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?style=flat-square&logo=kotlin&logoColor=white)
+![C](https://img.shields.io/badge/C-A8B9CC?style=flat-square&logo=c&logoColor=black)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white)
+![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=flat-square&logo=streamlit&logoColor=white)
+![XGBoost](https://img.shields.io/badge/XGBoost-337AB7?style=flat-square)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=flat-square&logo=scikitlearn&logoColor=white)
+![Playwright](https://img.shields.io/badge/Playwright-2EAD33?style=flat-square&logo=playwright&logoColor=white)
+![AWS](https://img.shields.io/badge/AWS%20(learning)-232F3E?style=flat-square&logo=amazonwebservices&logoColor=white)
 
-### Selected work
+## Research
 
-**[sentinel](https://github.com/satvikp-coder/sentinel)** — Security controls and monitoring for autonomous browser agents. <sub>· Python</sub>
+1. [phishing-slm-research](https://github.com/satvikp-coder/phishing-slm-research): do small language models detect phishing email well? Supervisor: Prof. Amit Das. In progress. Test set still locked.
+2. [perovskite-pce-dashboard](https://github.com/satvikp-coder/perovskite-pce-dashboard): ML screening dashboard for perovskite solar cell efficiency. Supervisor: Mayuribala Mangrulkar. Blocked-split R² is 0.457, random split 0.623. [Live demo](https://perovskite-pce-dashboard.onrender.com).
+3. Admission-to-placement data mining study (summer 2026). No public repo. Analyses admission data to see how student selection can be made better, and links it to placement outcomes.
 
-**[demo-group7](https://github.com/satvikp-coder/demo-group7)** — Heritage trip planning with a React client and Express/PostgreSQL backend. <sub>· TypeScript</sub>
+## Featured projects
 
-**[phishing-slm-research](https://github.com/satvikp-coder/phishing-slm-research)** — A research plan comparing small language model approaches to phishing email detection. <sub>· Python</sub>
+1. [sentinelx](https://github.com/satvikp-coder/sentinelx): verification-first guards for AI agents and authorized lab sites (Meta AI Hackathon). `Python`
+2. [sentinel](https://github.com/satvikp-coder/sentinel): security layer and dashboard for autonomous browser agents (HACK IITK 2026 Finalist). `Python`
+3. [phishing-slm-research](https://github.com/satvikp-coder/phishing-slm-research): phishing email detection with small language models vs. classical baselines. `Python`
+4. [perovskite-pce-dashboard](https://github.com/satvikp-coder/perovskite-pce-dashboard): predicts perovskite solar cell efficiency and a stability proxy. `Python`
+5. [PhotoProof](https://github.com/satvikp-coder/PhotoProof): image forgery detection and localization using digital image processing. `Python`
 
-**[Ras](https://github.com/satvikp-coder/Ras)** — Local competition operations with inventory, transactions, and SQLite ledgers. <sub>· JavaScript</sub>
+More: [AuroraOS](https://github.com/satvikp-coder/AuroraOS) (ARM64 operating system, `C`) | [smart-trolley-os](https://github.com/satvikp-coder/smart-trolley-os) (Android travel-assistance launcher, `Kotlin`) | [CyberX](https://github.com/satvikp-coder/CyberX) (scam awareness, IBM Z Datathon 2025, `Python`)
 
-**[Amdavad-online](https://github.com/satvikp-coder/Amdavad-online)** — An Ahmedabad-inspired browser game at its documented foundation stage. <sub>· TypeScript</sub>
+## Apps on Google Play
 
-**[CSC360-AU2520039](https://github.com/satvikp-coder/CSC360-AU2520039)** — Java graphics coursework and experiments. <sub>· Java</sub>
+- [ScamLens](https://play.google.com/store/apps/details?id=in.satvikpatel.scamlens): checks messages and links for scams. Works in English, Hindi and Gujarati.
+- [Cyber Safe India](https://play.google.com/store/apps/details?id=com.satvik.CyberSafeIndia): [TODO: ask Satvik: one line on what the app does; the Play page text was not readable to me]
 
-### Recent public activity
+## Hackathons
 
-- 2026-11-08 · Pushed code in [satvikp-coder/PhotoProof](https://github.com/satvikp-coder/PhotoProof)
-- 2026-11-08 · Pushed code in [satvikp-coder/makarba-360](https://github.com/satvikp-coder/makarba-360)
-- 2026-11-08 · Pushed code in [satvikp-coder/AuroraOS](https://github.com/satvikp-coder/AuroraOS)
-- 2026-11-07 · Pushed code in [satvikp-coder/perovskite-pce-dashboard](https://github.com/satvikp-coder/perovskite-pce-dashboard)
-- 2026-11-08 · Merged a pull request in [satvikp-coder/PhotoProof](https://github.com/satvikp-coder/PhotoProof)
+- HACK IITK 2026: Finalist (Sentinel)
+- Meta AI Hackathon (Sentinel X)
+- Ingenious Hackathon 7.0 (Identity Hub)
+- IBM Z Datathon 2025 (CyberX)
+- Odoo Hackathon 2026
 
-<sub>Updated 2026-11-09 UTC · Public GitHub data · See [metric definitions](docs/SETUP.md#metric-definitions).</sub>
-<!-- PROFILE:GENERATED:END -->
+## GitHub stats
 
-### Currently exploring
+<p align="center">
+  <img height="170" alt="GitHub stats" src="https://github-readme-stats.vercel.app/api?username=satvikp-coder&show_icons=true&theme=default&hide_border=true&include_all_commits=true&count_private=true" />
+  <img height="170" alt="Top languages" src="https://github-readme-stats.vercel.app/api/top-langs/?username=satvikp-coder&layout=compact&theme=default&hide_border=true&langs_count=6" />
+</p>
+<p align="center">
+  <img height="170" alt="Streak" src="https://streak-stats.demolab.com?user=satvikp-coder&theme=default&hide_border=true" />
+</p>
 
-Cybersecurity · Applied AI/ML · Secure systems · Software engineering · Technical research
+<sub>Cards are generated by third-party services. Private work only shows if "Include private contributions" is on in my profile settings.</sub>
 
-<p align="center"><a href="https://github.com/satvikp-coder">GitHub</a></p>
+---
+
+<p align="center"><a href="https://www.linkedin.com/in/satvik-hitesh-patel-65b9b428a/">LinkedIn</a></p>

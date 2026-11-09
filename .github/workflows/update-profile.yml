@@ -1,19 +1,9 @@
 name: Update profile
 
+# The old generator rewrote README.md every 15 minutes and would overwrite the
+# hand-written README. It is now manual only.
 on:
-  schedule:
-    # Edit this cron to change frequency. Scheduled runs may be delayed.
-    - cron: '7,22,37,52 * * * *'
   workflow_dispatch:
-  repository_dispatch:
-    types: [refresh-profile]
-  push:
-    branches: [main]
-    paths:
-      - 'scripts/**'
-      - 'config/**'
-      - 'README.md'
-      - '.github/workflows/update-profile.yml'
 
 permissions:
   contents: write
