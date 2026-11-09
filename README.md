@@ -48,12 +48,12 @@ CS student building tools to keep people safe online, and learning research.
 4. [perovskite-pce-dashboard](https://github.com/satvikp-coder/perovskite-pce-dashboard): predicts perovskite solar cell efficiency and a stability proxy. `Python`
 5. [PhotoProof](https://github.com/satvikp-coder/PhotoProof): framework for image forgery detection. Foundation stage: the pipeline works, detectors are not built yet. `Python`
 
-More: [AuroraOS](https://github.com/satvikp-coder/AuroraOS) (early-stage ARM64 OS kernel, `C`) | [smart-trolley-os](https://github.com/satvikp-coder/smart-trolley-os) (Android launcher built on the open-source Dashline, `Kotlin`) | [CyberX](https://github.com/satvikp-coder/CyberX) (phishing website detector, IBM Z Datathon 2025, `Python`)
+More: [AuroraOS](https://github.com/satvikp-coder/AuroraOS) (early-stage ARM64 OS kernel, `C`) | [smart-trolley-os](https://github.com/satvikp-coder/smart-trolley-os) (Android travel-assistance launcher with offline maps, built on the open-source Dashline base, `Kotlin`) | [CyberX](https://github.com/satvikp-coder/CyberX) (phishing website detector, IBM Z Datathon 2025, `Python`)
 
 ## Apps on Google Play
 
 - [ScamLens](https://play.google.com/store/apps/details?id=in.satvikpatel.scamlens): checks messages and links for scams. Works in English, Hindi and Gujarati.
-- [Cyber Safe India](https://play.google.com/store/apps/details?id=com.satvik.CyberSafeIndia): [TODO: ask Satvik: one line on what the app does; the Play page text was not readable to me]
+- [Cyber Safe India](https://play.google.com/store/apps/details?id=com.satvik.CyberSafeIndia): Android app with daily security tips, scam alerts, emergency numbers and quizzes to teach cyber safety.
 
 ## Hackathons
 
