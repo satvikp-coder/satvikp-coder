@@ -4,7 +4,7 @@ CS student building tools to keep people safe online, and learning research.
 
 ## About me
 
-- BSc (Hons) Computer Science at Ahmedabad University (admitted 2025), based in Ahmedabad.
+- BS (Hons) Computer Science at Ahmedabad University (admitted 2025), based in Ahmedabad.
 - I am interested in AI/ML security, trustworthy AI, and scam and phishing detection. I am also learning cloud (AWS).
 - Now: research on phishing detection with small language models, and a perovskite solar cell dashboard.
 - Reach me: [LinkedIn](https://www.linkedin.com/in/satvik-hitesh-patel-65b9b428a/) | University email: satvik.p@ahduni.edu.in | Personal: satvikb0301@gmail.com
