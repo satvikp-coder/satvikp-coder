@@ -1,46 +1,39 @@
-name: Update profile
+name: Update profile stats
 
-# The old generator rewrote README.md every 15 minutes and would overwrite the
-# hand-written README. It is now manual only.
 on:
+  schedule:
+    - cron: '17 3 * * *'   # daily
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['scripts/stats.py']
 
 permissions:
   contents: write
 
 concurrency:
-  group: profile-refresh
+  group: profile-stats
   cancel-in-progress: false
 
 jobs:
-  refresh:
-    if: github.actor != 'github-actions[bot]' || github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || github.event_name == 'repository_dispatch'
+  stats:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v5
-        with:
-          persist-credentials: false
       - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
-      - name: Test generator
-        run: python -m unittest discover -s tests -v
-      - name: Generate profile
+      - name: Build cards
         env:
-          GITHUB_TOKEN: ${{ github.token }}
-        run: python scripts/profile.py
-      - name: Validate generated assets
-        run: python scripts/validate.py
-      - name: Commit changed output
-        env:
-          GH_TOKEN: ${{ github.token }}
+          # Optional: add a PAT as repo secret STATS_TOKEN (scopes: repo, read:user)
+          # and set INCLUDE_PRIVATE to 1 to count private repos too.
+          GITHUB_TOKEN: ${{ secrets.STATS_TOKEN || github.token }}
+          INCLUDE_PRIVATE: ${{ secrets.STATS_TOKEN && '1' || '0' }}
+        run: python scripts/stats.py
+      - name: Commit changes
         run: |
-          git add README.md assets/*.svg
-          if git diff --cached --quiet; then
-            echo 'No generated changes'
-            exit 0
-          fi
-          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'chore(profile): refresh public metrics'
-          gh auth setup-git
-          git push origin HEAD:main
+          git add assets/*-card.svg
+          git diff --cached --quiet && exit 0
+          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'chore: refresh stat cards'
+          git push
